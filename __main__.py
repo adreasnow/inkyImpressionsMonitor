@@ -151,9 +151,23 @@ while True:
         lastRunTime = time()
 
         # updates
-        gCal.update()
-        gadi.update()
-        mon.update()
-        todoist.update()
+        try:
+            gCal.update()
+        except:
+            pass
+
+        try:
+            gadi.update()
+        except:
+            pass
+
+        try:    
+            mon.update()
+        except:
+            pass
+        try:
+            todoist.update()
+        except:
+            pass
     sleep(1)
 
