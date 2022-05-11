@@ -52,4 +52,10 @@ class monarchClass:
 				else:
 					self.jobs += '...' if tooManyJobs == False else ''
 
+
+			monOutput = runbash(f'ssh {self.username}@monarch.erc.monash.edu \"cd ~/p2015120004 && /bin/lfs quota -h -g p2015120004 .\"').splitlines()
+			self.usage = monOutput[2].split()[1]
+			self.quota = monOutput[2].split()[2]
+
+
 			self.usageruntime = time()
