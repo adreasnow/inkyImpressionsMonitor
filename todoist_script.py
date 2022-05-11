@@ -24,6 +24,7 @@ class todoistClass:
 
             for i in tasks:
                 try:
+                    self.tasks = pd.DataFrame(columns=['dateTime', 'name', 'timeDiff'])
                     taskDate = datetime.strptime(i.due.date, '%Y-%m-%d')
                     taskETA = dateDiff(taskDate.date())
                     taskTitle = i.content
