@@ -18,6 +18,7 @@ mon = monarchClass('asnow', frequency=120)
 lastRunTime = 0
 frequency = 120
 display = auto()
+display.set_border(inky.BLACK)
 
 
 
@@ -127,6 +128,8 @@ def drawImg(display):
 while True:
     if ((lastRunTime != 0) and ((time() - lastRunTime) > frequency)) or (lastRunTime == 0):
         display.set_image(drawImg(display))
+        print('updating display')
+        display.show()
         lastRunTime = time()
 
         # updates
