@@ -46,10 +46,10 @@ def drawImg(display):
     w, h = display.resolution
     w = w*2
     h = h*2
-    fnt = ImageFont.truetype('/Users/asno0004/Library/Fonts/Roboto-Regular.ttf', 22)
-    fnt2 = ImageFont.truetype('/Users/asno0004/Library/Fonts/Roboto-Regular.ttf', 24)
-    boldfnt = ImageFont.truetype('/Users/asno0004/Library/Fonts/Roboto-Bold.ttf', 30)
-    monofnt = ImageFont.truetype('/Users/asno0004/Library/Fonts/RobotoMono-Regular.ttf', 18)
+    fnt = ImageFont.truetype('Roboto-Regular.ttf', 22)
+    fnt2 = ImageFont.truetype('Roboto-Regular.ttf', 24)
+    boldfnt = ImageFont.truetype('Roboto-Bold.ttf', 30)
+    monofnt = ImageFont.truetype('RobotoMono-Regular.ttf', 18)
     img  = Image.new(mode="RGB", size=(w, h), color=(255,255,255))
     d = ImageDraw.Draw(img)
 
