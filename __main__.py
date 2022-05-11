@@ -22,6 +22,7 @@ hostUser = environ['USER']
 
 if hostUser == 'pi':
     from inky.auto import auto
+    import inky
     display = auto()
     display.set_border(inky.BLACK)
 else:
