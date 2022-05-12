@@ -16,9 +16,10 @@ gCal = calendarClass(frequency=360)
 gadi = gadiClass('as1892', frequency=720)
 mon = monarchClass('asnow', frequency=120)
 lastRunTime = 0
-frequency = 120
+
 global hostUser
 hostUser = environ['USER'] 
+frequency = 120 if hostUser == 'pi' else 20
 
 if hostUser == 'pi':
     from inky.auto import auto

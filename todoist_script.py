@@ -21,10 +21,14 @@ class todoistClass:
                 tasks = self.todoistAPI.get_tasks()
             except Exception as error:
                 print(error)
+                return
 
+            self.tasks = pd.DataFrame(columns=['dateTime', 'name', 'timeDiff'])
+            self.groupedTaskList = []
+            self.orderedTaskList = []
+            
             for i in tasks:
                 try:
-                    self.tasks = pd.DataFrame(columns=['dateTime', 'name', 'timeDiff'])
                     taskDate = datetime.strptime(i.due.date, '%Y-%m-%d')
                     taskETA = dateDiff(taskDate.date())
                     taskTitle = i.content

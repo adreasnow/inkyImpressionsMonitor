@@ -41,7 +41,7 @@ class monarchClass:
 		if ((self.usageruntime != 0) and ((time() - self.usageruntime) > self.frequency)) or (self.usageruntime == 0):
 			tooManyJobs = False
 			squeueString = '%.18i %10P %30j %.8T %.12L %.10l %.4m %.4C %.8q %.5R'
-			monOutput = runbash(f'ssh {self.username}@monarch.erc.monash.edu \"squeue -o\'{squeueString}\' -u {self.username}\"').splitlines()
+			monOutput = runbash(f'ssh {self.username}@monarch.erc.monash.edu \"squeue -o\'{squeueString}\' -u {self.username} --sort=-T,j\"').splitlines()
 			
 			self.jobs = 'Job ID  Part              Job Name                 Status       Time Left       Mem   CPU  QOS    Node(s)\n'
 			self.jobs += '-----------------------------------------------------------------------------------------------------------\n'

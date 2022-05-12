@@ -30,6 +30,9 @@ class calendarClass:
         if ((self.usageruntime != 0) and ((time() - self.usageruntime) > self.frequency)) or (self.usageruntime == 0):
             self.groupedEventList = []
             self.events = pd.DataFrame(columns=['dateTime', 'name', 'timeDiff'])
+            self.homeCalendars = []
+            self.uniCalendars = []
+            
             for i in self.homeCalendarNames:
                 self.homeCalendars += [GoogleCalendar(i, credentials_path='./auth/credentials.json', token_path='./auth/gmailToken.pickle')]
 
