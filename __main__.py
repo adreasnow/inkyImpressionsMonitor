@@ -19,7 +19,7 @@ lastRunTime = 0
 
 global hostUser
 hostUser = environ['USER'] 
-frequency = 120 if hostUser == 'pi' else 20
+frequency = 240 if hostUser == 'pi' else 20
 
 if hostUser == 'pi':
     from inky.auto import auto
