@@ -108,7 +108,7 @@ def drawImg(display):
     d.text((80+(4*(w/5)), 50), 'Project', font=fnt2, fill=(0,0,0))
     d.line([(50+(4*(w/5)), 85),(180+(4*(w/5)), 85)], fill='#000000', width=2)
     d.text((15+(4*(w/5)), 100), gadiNameString, font=fnt, fill=(0,0,0))
-    d.text((90+(4*(w/5)), 100), gadiValString, font=fnt, fill=(0,0,0))
+    d.text((110+(4*(w/5)), 100), gadiValString, font=fnt, fill=(0,0,0))
     d.text((180+(4*(w/5)), 100), gadiMSUString, font=fnt, fill=(0,0,0))
 
     d.text((85+(4*(w/5)), 195), 'Users', font=fnt2, fill=(0,0,0))
@@ -124,7 +124,7 @@ def drawImg(display):
         KSUList += 'KSU\n'
 
     d.text((15+(4*(w/5)), 240), users, font=fnt, fill=(0,0,0))
-    d.text((100+(4*(w/5)), 240), userUsage, font=fnt, fill=(0,0,0))
+    d.text((110+(4*(w/5)), 240), userUsage, font=fnt, fill=(0,0,0))
     d.text((180+(4*(w/5)), 240), KSUList, font=fnt, fill=(0,0,0))
 
     # Border
