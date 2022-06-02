@@ -6,6 +6,7 @@ from functions import wrapString
 from warnings import filterwarnings
 from PIL import Image, ImageDraw, ImageFont
 from time import sleep, time
+from datetime import datetime
 from os import environ
 
 filterwarnings('ignore')
@@ -135,6 +136,10 @@ def drawImg(display):
     d.line([(0, 40),(w, 40)], fill='#000000', width=3) # bottom of header
     d.line([(4*(w/5), 0),(4*(w/5), 440)], fill='#000000', width=3) # todo/gadi
     d.line([(2*(w/5), 0),(2*(w/5), 440)], fill='#000000', width=3) # cal/todo
+
+    # Refresh time
+    timeString = f'Last Run: {datetime.now().strftime("%a %-I:%M %p")}'
+    d.text(((w/3)-300, 449), timeString, font=fnt, fill=(0,0,0))
 
 
     img = img.resize((w// 2, h// 2), resample=Image.BICUBIC)
