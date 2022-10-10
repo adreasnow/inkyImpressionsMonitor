@@ -142,14 +142,14 @@ def drawImg(display):
     d.text(((w/3)-300, 449), timeString, font=fnt, fill=(0,0,0))
 
 
-    img = img.resize((w// 2, h// 2), resample=Image.BICUBIC).rotate(180)
+    img = img.resize((w// 2, h// 2), resample=Image.BICUBIC)
     return img
 
 
 while True:
     if ((lastRunTime != 0) and ((time() - lastRunTime) > frequency)) or (lastRunTime == 0):
         if hostUser == 'pi':
-            display.set_image(drawImg(display))
+            display.set_image(drawImg(display).rotate(180))
             display.show()
         else:
             drawImg(display).show()
