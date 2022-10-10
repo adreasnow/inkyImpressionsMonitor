@@ -142,7 +142,7 @@ def drawImg(display):
     d.text(((w/3)-300, 449), timeString, font=fnt, fill=(0,0,0))
 
 
-    img = img.resize((w// 2, h// 2), resample=Image.BICUBIC)
+    img = img.resize((w// 2, h// 2), resample=Image.BICUBIC).rotate(180)
     return img
 
 

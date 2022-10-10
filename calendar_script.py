@@ -44,7 +44,7 @@ class calendarClass:
 
 
             for i in self.uniCalendarNames:
-                self.uniCalendars += [GoogleCalendar(calendar=i, credentials_path='./auth/credentials.json', token_path='./auth/monashToken.pickle')]
+                self.uniCalendars += [GoogleCalendar(i, credentials_path='./auth/credentials.json', token_path='./auth/monashToken.pickle')]
 
             for calendar in self.uniCalendars:
                     for event in calendar.get_events(single_events=True, order_by='startTime'):
