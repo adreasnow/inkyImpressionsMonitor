@@ -11,16 +11,21 @@ from os import environ
 
 filterwarnings('ignore')
 
-
-todoist = todoistClass('054bed5f786a1efe7d6c54a900d1a72e48b74308', frequency=360)
-gCal = calendarClass(frequency=360)
-gadi = gadiClass('as1892', frequency=720)
-mon = monarchClass('asnow', frequency=120)
-lastRunTime = 0
+def initObjects():
+    todoist = todoistClass('054bed5f786a1efe7d6c54a900d1a72e48b74308', frequency=360)
+    gCal = calendarClass(frequency=360)
+    gadi = gadiClass('as1892', frequency=720)
+    mon = monarchClass('asnow', frequency=120)
+    lastRunTime = 0
+    initTime = time()
+    print('(re)initialised objects')
+    return todoist, gCal, gadi, mon, lastRunTime, initTime
 
 global hostUser
 hostUser = environ['USER'] 
 frequency = 240 if hostUser == 'pi' else 20
+reInitFreq = 86400 if hostUser == 'pi' else 40
+todoist, gCal, gadi, mon, lastRunTime, initTime = initObjects() 
 
 if hostUser == 'pi':
     from inky.auto import auto
@@ -147,6 +152,9 @@ def drawImg(display):
 
 
 while True:
+    if (((time() - initTime) > reInitFreq)):
+        todoist, gCal, gadi, mon, lastRunTime, initTime = initObjects() 
+
     if ((lastRunTime != 0) and ((time() - lastRunTime) > frequency)) or (lastRunTime == 0):
         if hostUser == 'pi':
             display.set_image(drawImg(display).rotate(180))
