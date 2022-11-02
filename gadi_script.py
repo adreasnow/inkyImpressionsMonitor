@@ -7,6 +7,7 @@ class gadiClass:
 		self.frequency = frequency
 		self.allocation = 0
 		self.reserved_me = reserved_me
+		self.userDict = {'as1892': 'Adrea', 'ph0021': 'Peter'}
 
 		# when things were run
 		self.usageruntime = 0

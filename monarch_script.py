@@ -46,7 +46,7 @@ class monarchClass:
 			self.jobs = 'Job ID  Part              Job Name                 Status       Time Left       Mem   CPU  QOS    Node(s)\n'
 			self.jobs += '-----------------------------------------------------------------------------------------------------------\n'
 			for i, val in enumerate(monOutput[1:]):
-				if i < 14:
+				if i < 30:
 					self.jobs += ' '.join([val[11:69], self.time2str(val[70:94].split()[0]),"of", self.time2strShort(val[70:94].split()[1]), val[94:]])
 					self.jobs += '\n'
 				else:
