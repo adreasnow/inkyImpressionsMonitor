@@ -47,8 +47,8 @@ def drawImg(display):
     d = ImageDraw.Draw(img)
 
     # MonARCH #-440
-    d.rectangle([(0, 0),(w, 40)], fill='#fffb00')
-    d.rectangle([(0, 40),(w, h)], fill='#fffbc2')
+    d.rectangle([(0, 0),(w, 40)], fill='#FF8888') 
+    d.rectangle([(0, 40),(w, h)], fill='#FFD2D2') 
     d.text(((w/2)-50, 4), "MonARCH", font=boldfnt, fill=(0,0,0))
     d.text((15, 50), mon.jobs, font=monofnt, fill=(0,0,0))
     d.line([(0, 0),(w, 0)], fill='#000000', width=4)
@@ -56,8 +56,8 @@ def drawImg(display):
     d.text((2*(w/3)+100, 9), f'Storage: {mon.usage} / {mon.quota}', font=fnt, fill=(0,0,0))
 
     # Gadi
-    d.rectangle([(0, h-80),(w, h-40)], fill='#00ff00')
-    d.rectangle([(0, h-40),(w, h)], fill='#c2ffc2')
+    d.rectangle([(0, h-80),(w, h-40)], fill='#B65DFF')
+    d.rectangle([(0, h-40),(w, h)], fill='#E2C1FF')
 
     gadiValString = f'{gadi.avail_project} KSU free out of {gadi.grant_project} KSU Avail ({gadi.used_project} KSU used)'
     d.text((20, h-75), "Gadi:", font=boldfnt, fill=(0,0,0))
