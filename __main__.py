@@ -47,8 +47,8 @@ def drawImg(display):
     d = ImageDraw.Draw(img)
 
     # MonARCH #-440
-    d.rectangle([(0, 0),(w, 40)], fill='#ff6666') 
-    d.rectangle([(0, 40),(w, h)], fill='#ffcccc') 
+    d.rectangle([(0, 0),(w, 40)], fill='#fa2065') 
+    d.rectangle([(0, 40),(w, h)], fill='#fa82a8') 
     d.text(((w/2)-50, 4), "MonARCH", font=boldfnt, fill=(0,0,0))
     d.text((15, 50), mon.jobs, font=monofnt, fill=(0,0,0))
     d.line([(0, 0),(w, 0)], fill='#000000', width=4)
