@@ -48,7 +48,7 @@ def drawImg(display):
 
     # MonARCH #-440
     d.rectangle([(0, 0),(w, 40)], fill='#fa2525') 
-    d.rectangle([(0, 40),(w, h)], fill='#fa8282') 
+    d.rectangle([(0, 40),(w, h)], fill='#f79292') 
     d.text(((w/2)-50, 4), "MonARCH", font=boldfnt, fill=(0,0,0))
     d.text((15, 50), mon.jobs, font=monofnt, fill=(0,0,0))
     d.line([(0, 0),(w, 0)], fill='#000000', width=4)
